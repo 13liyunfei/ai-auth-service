@@ -1,0 +1,20 @@
+server:
+  port: ${AUTH_PORT:8100}
+  address: ${AUTH_ADDRESS:0.0.0.0}
+
+spring:
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/ai_auth_service}
+    username: ${SPRING_DATASOURCE_USERNAME:yunfei}
+    password: ${SPRING_DATASOURCE_PASSWORD:}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate       # 生产：schema 由 Flyway 管理
+  flyway:
+    enabled: true
+
+adp:
+  auth:
+    api-key: ${AUTH_API_KEY:}
+    token-ttl-hours: ${AUTH_TOKEN_TTL_HOURS:72}
